@@ -26,7 +26,7 @@ export function ChoiceButton({ variant, onClick }: ChoiceButtonProps) {
 
   return (
     <Button
-      bg="#ecf0f1"
+      bg="gray.50"
       w={["32", "32", "40"]}
       h={["32", "32", "40"]}
       borderRadius={9999}

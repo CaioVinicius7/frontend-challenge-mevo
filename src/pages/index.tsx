@@ -37,7 +37,7 @@ export default function Home() {
             mt="10"
             fontSize={["2xl", "3xl", "4xl"]}
             fontWeight="bold"
-            color="#ECF0F1"
+            color="gray.50"
           >
             MACHINE IS CHOOSING...
           </Text>

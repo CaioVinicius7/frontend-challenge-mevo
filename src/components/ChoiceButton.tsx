@@ -7,7 +7,7 @@ import scissorsImg from "../assets/icon-scissors.svg";
 
 interface ChoiceButtonProps {
   variant: "Rock" | "Paper" | "Scissors" | "Load";
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export function ChoiceButton({ variant, onClick }: ChoiceButtonProps) {

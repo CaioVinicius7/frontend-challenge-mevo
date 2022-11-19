@@ -41,17 +41,17 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
   }
 
   function calculateGameResult(
-    playerChoice: ChoiceOptions,
-    machineChoice: ChoiceOptions
+    firstChoice: ChoiceOptions,
+    secondChoice: ChoiceOptions
   ) {
     const winCondition =
-      (playerChoice === "Paper" && machineChoice === "Rock") ||
-      (playerChoice === "Rock" && machineChoice === "Scissors") ||
-      (playerChoice === "Scissors" && machineChoice === "Paper");
+      (firstChoice === "Paper" && secondChoice === "Rock") ||
+      (firstChoice === "Rock" && secondChoice === "Scissors") ||
+      (firstChoice === "Scissors" && secondChoice === "Paper");
 
     setGameResult("lose");
 
-    if (playerChoice === machineChoice) {
+    if (firstChoice === secondChoice) {
       setGameResult("tied");
     }
 

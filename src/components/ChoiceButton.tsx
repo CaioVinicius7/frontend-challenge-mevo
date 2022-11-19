@@ -40,7 +40,7 @@ export function ChoiceButton({
       onClick={onClick}
       {...props}
     >
-      {variant !== "Load" && <Image src={icon[variant]} alt="" />}
+      {variant !== "Load" && <Image src={icon[variant]} alt="" priority />}
     </Button>
   );
 }

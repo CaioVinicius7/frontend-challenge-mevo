@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Center, Flex, Text, VStack } from "@chakra-ui/react";
 
 import { Scoreboard } from "../components/Scoreboard";
@@ -12,12 +13,16 @@ export default function Home() {
   const [playerChoice, setPlayerChoice] =
     useState<PlayerChoiceOptions>("Paper");
 
-  function handleStartGame(playerChoice: PlayerChoiceOptions) {
+  const router = useRouter();
+
+  async function handleStartGame(playerChoice: PlayerChoiceOptions) {
     setIsLoading(true);
 
     setPlayerChoice(playerChoice);
 
-    setTimeout(() => setIsLoading(false), 2000);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    router.push("/result");
   }
 
   return (

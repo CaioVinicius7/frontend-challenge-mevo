@@ -10,6 +10,7 @@ interface GameContextType {
   score: number;
   handleStartGame: (playerChoice: ChoiceOptions) => void;
   setMachineIsChoosing: (value: boolean) => void;
+  setScore: (value: number) => void;
 }
 
 interface GameContextProviderProps {
@@ -48,7 +49,8 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
         machineIsChoosing,
         score,
         handleStartGame,
-        setMachineIsChoosing
+        setMachineIsChoosing,
+        setScore
       }}
     >
       {children}

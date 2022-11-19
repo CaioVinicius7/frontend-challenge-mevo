@@ -16,22 +16,19 @@ export default function Result() {
   const { playerChoice, machineChoice, score, setScore } =
     useContext(GameContext);
 
+  const winCondition =
+    (playerChoice === "Paper" && machineChoice === "Rock") ||
+    (playerChoice === "Rock" && machineChoice === "Scissors") ||
+    (playerChoice === "Scissors" && machineChoice === "Paper");
+
   function calculateGameResult() {
     if (playerChoice === machineChoice) {
       setGameResult("tied");
-
-      return;
     }
 
-    if (
-      (playerChoice === "Paper" && machineChoice === "Rock") ||
-      (playerChoice === "Rock" && machineChoice === "Scissors") ||
-      (playerChoice === "Scissors" && machineChoice === "Paper")
-    ) {
+    if (winCondition) {
       setScore(score + 1);
       setGameResult("win");
-
-      return;
     }
   }
 

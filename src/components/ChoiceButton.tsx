@@ -6,12 +6,12 @@ import paperImg from "../assets/icon-paper.svg";
 import scissorsImg from "../assets/icon-scissors.svg";
 
 interface ChoiceButtonProps extends ButtonProps {
-  variant: "Rock" | "Paper" | "Scissors" | "Load";
+  variant?: "Rock" | "Paper" | "Scissors" | "None";
   onClick?: () => void;
 }
 
 export function ChoiceButton({
-  variant,
+  variant = "None",
   onClick,
   ...props
 }: ChoiceButtonProps) {
@@ -19,7 +19,7 @@ export function ChoiceButton({
     Rock: "green.500",
     Paper: "yellow.400",
     Scissors: "blue.400",
-    Load: "red.500"
+    None: "red.500"
   };
 
   const icon = {
@@ -40,7 +40,7 @@ export function ChoiceButton({
       onClick={onClick}
       {...props}
     >
-      {variant !== "Load" && <Image src={icon[variant]} alt="" priority />}
+      {variant !== "None" && <Image src={icon[variant]} alt="" priority />}
     </Button>
   );
 }

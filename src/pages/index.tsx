@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import Head from "next/head";
 import { Center, Flex, Text, VStack } from "@chakra-ui/react";
 
@@ -7,17 +7,17 @@ import { GameContext } from "../contexts/GameContext";
 import { Scoreboard } from "../components/Scoreboard";
 import { ChoiceButton } from "../components/ChoiceButton";
 
-export default function Home() {
-  const {
-    playerChoice,
-    handleStartGame,
-    machineIsChoosing,
-    setMachineIsChoosing
-  } = useContext(GameContext);
+type PlayerChoiceOptions = "Rock" | "Paper" | "Scissors";
 
-  useEffect(() => {
-    setMachineIsChoosing(false);
-  }, [setMachineIsChoosing]);
+export default function Home() {
+  const [machineIsChoosing, setMachineIsChoosing] = useState(false);
+
+  const { playerChoice, startGame } = useContext(GameContext);
+
+  function handleStartGame(choice: PlayerChoiceOptions) {
+    setMachineIsChoosing(true);
+    startGame(choice);
+  }
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Home() {
             </Center>
 
             <Center w="50%">
-              <ChoiceButton as="span" variant="Load" />
+              <ChoiceButton as="span" />
             </Center>
 
             <Text

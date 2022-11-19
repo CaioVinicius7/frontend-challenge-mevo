@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
 
 import { Scoreboard } from "../components/Scoreboard";
@@ -34,6 +35,7 @@ export default function result() {
           </Heading>
 
           <Button
+            as={Link}
             bg="blue.400"
             color="gray.50"
             fontSize={["sm", "md", "lg"]}
@@ -45,6 +47,7 @@ export default function result() {
             _hover={{
               filter: "brightness(0.8)"
             }}
+            href="/"
           >
             Play Again
           </Button>

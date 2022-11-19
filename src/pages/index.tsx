@@ -36,11 +36,11 @@ export default function Home() {
         {isLoading ? (
           <Flex w="full" flexWrap="wrap" pt="50" justifyContent="center">
             <Center w="50%">
-              <ChoiceButton variant={playerChoice} />
+              <ChoiceButton as="span" variant={playerChoice} />
             </Center>
 
             <Center w="50%">
-              <ChoiceButton variant="Load" />
+              <ChoiceButton as="span" variant="Load" />
             </Center>
 
             <Text
@@ -60,6 +60,9 @@ export default function Home() {
                 onClick={() => {
                   handleStartGame("Rock");
                 }}
+                _hover={{
+                  transform: "scale(1.1)"
+                }}
               />
             </Center>
 
@@ -69,6 +72,9 @@ export default function Home() {
                 onClick={() => {
                   handleStartGame("Paper");
                 }}
+                _hover={{
+                  transform: "scale(1.1)"
+                }}
               />
             </Center>
 
@@ -77,6 +83,9 @@ export default function Home() {
                 variant="Scissors"
                 onClick={() => {
                   handleStartGame("Scissors");
+                }}
+                _hover={{
+                  transform: "scale(1.1)"
                 }}
               />
             </Center>

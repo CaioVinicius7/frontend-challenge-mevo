@@ -15,11 +15,11 @@ export default function result() {
 
         <Flex w="full" flexWrap="wrap" pt="50" justifyContent="center">
           <Center w="50%">
-            <ChoiceButton variant="Rock" />
+            <ChoiceButton as="span" variant="Paper" />
           </Center>
 
           <Center w="50%">
-            <ChoiceButton variant="Paper" />
+            <ChoiceButton as="span" variant="Rock" />
           </Center>
 
           <Heading

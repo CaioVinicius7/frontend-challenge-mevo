@@ -1,14 +1,15 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useCallback, useState } from "react";
 import Router from "next/router";
 
 type ChoiceOptions = "Rock" | "Paper" | "Scissors" | "None";
+type GameResultOptions = "win" | "lose" | "tied";
 
 interface GameContextType {
   playerChoice: ChoiceOptions;
   machineChoice: ChoiceOptions;
   score: number;
+  gameResult: GameResultOptions;
   startGame: (playerChoice: ChoiceOptions) => void;
-  setScore: (value: number) => void;
 }
 
 interface GameContextProviderProps {
@@ -20,6 +21,7 @@ export const GameContext = createContext({} as GameContextType);
 export function GameContextProvider({ children }: GameContextProviderProps) {
   const [playerChoice, setPlayerChoice] = useState<ChoiceOptions>("None");
   const [machineChoice, setMachineChoice] = useState<ChoiceOptions>("None");
+  const [gameResult, setGameResult] = useState<GameResultOptions>("lose");
   const [score, setScore] = useState(0);
 
   const choices: ChoiceOptions[] = ["Rock", "Paper", "Scissors"];
@@ -33,7 +35,30 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
 
     setMachineChoice(choices[randomChoice]);
 
+    calculateGameResult(playerChoice, choices[randomChoice]);
+
     Router.push("/result");
+  }
+
+  function calculateGameResult(
+    playerChoice: ChoiceOptions,
+    machineChoice: ChoiceOptions
+  ) {
+    const winCondition =
+      (playerChoice === "Paper" && machineChoice === "Rock") ||
+      (playerChoice === "Rock" && machineChoice === "Scissors") ||
+      (playerChoice === "Scissors" && machineChoice === "Paper");
+
+    setGameResult("lose");
+
+    if (playerChoice === machineChoice) {
+      setGameResult("tied");
+    }
+
+    if (winCondition) {
+      setGameResult("win");
+      setScore((state) => state + 1);
+    }
   }
 
   return (
@@ -42,8 +67,8 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
         playerChoice,
         machineChoice,
         score,
-        startGame,
-        setScore
+        gameResult,
+        startGame
       }}
     >
       {children}

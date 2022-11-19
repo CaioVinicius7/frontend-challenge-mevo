@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
@@ -8,33 +8,8 @@ import { ChoiceButton } from "../components/ChoiceButton";
 
 import { GameContext } from "../contexts/GameContext";
 
-type GameResultOptions = "win" | "lose" | "tied";
-
 export default function Result() {
-  const [gameResult, setGameResult] = useState<GameResultOptions>("lose");
-
-  const { playerChoice, machineChoice, score, setScore } =
-    useContext(GameContext);
-
-  const winCondition =
-    (playerChoice === "Paper" && machineChoice === "Rock") ||
-    (playerChoice === "Rock" && machineChoice === "Scissors") ||
-    (playerChoice === "Scissors" && machineChoice === "Paper");
-
-  function calculateGameResult() {
-    if (playerChoice === machineChoice) {
-      setGameResult("tied");
-    }
-
-    if (winCondition) {
-      setScore(score + 1);
-      setGameResult("win");
-    }
-  }
-
-  useEffect(() => {
-    calculateGameResult();
-  }, []);
+  const { playerChoice, machineChoice, gameResult } = useContext(GameContext);
 
   return (
     <>

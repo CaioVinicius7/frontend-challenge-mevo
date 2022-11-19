@@ -24,12 +24,18 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
   const [score, setScore] = useState(0);
   const [machineIsChoosing, setMachineIsChoosing] = useState(false);
 
+  const choices: ChoiceOptions[] = ["Rock", "Paper", "Scissors"];
+
   async function handleStartGame(playerChoice: ChoiceOptions) {
     setMachineIsChoosing(true);
 
     setPlayerChoice(playerChoice);
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    const randomChoice = Math.floor(Math.random() * choices.length);
+
+    setMachineChoice(choices[randomChoice]);
 
     Router.push("/result");
   }

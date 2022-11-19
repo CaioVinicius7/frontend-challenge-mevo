@@ -3,10 +3,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import { theme } from "../styles/theme";
 
+import { GameContextProvider } from "../contexts/GameContext";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />;
+      <GameContextProvider>
+        <Component {...pageProps} />;
+      </GameContextProvider>
     </ChakraProvider>
   );
 }

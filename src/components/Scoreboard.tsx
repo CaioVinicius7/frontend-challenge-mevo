@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { VStack, Heading, Text } from "@chakra-ui/react";
 
+import { GameContext } from "../contexts/GameContext";
+
 export function Scoreboard() {
+  const { score } = useContext(GameContext);
+
   return (
     <VStack
       as="header"
@@ -15,7 +20,7 @@ export function Scoreboard() {
         Score
       </Heading>
       <Text as="strong" fontSize={["2xl", "3xl", "4xl"]}>
-        15
+        {score}
       </Text>
     </VStack>
   );

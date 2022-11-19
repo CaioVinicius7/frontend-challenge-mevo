@@ -1,29 +1,23 @@
-import { useState } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { Center, Flex, Text, VStack } from "@chakra-ui/react";
+
+import { GameContext } from "../contexts/GameContext";
 
 import { Scoreboard } from "../components/Scoreboard";
 import { ChoiceButton } from "../components/ChoiceButton";
 
-type PlayerChoiceOptions = "Rock" | "Paper" | "Scissors";
-
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [playerChoice, setPlayerChoice] =
-    useState<PlayerChoiceOptions>("Paper");
+  const {
+    playerChoice,
+    handleStartGame,
+    machineIsChoosing,
+    setMachineIsChoosing
+  } = useContext(GameContext);
 
-  const router = useRouter();
-
-  async function handleStartGame(playerChoice: PlayerChoiceOptions) {
-    setIsLoading(true);
-
-    setPlayerChoice(playerChoice);
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    router.push("/result");
-  }
+  useEffect(() => {
+    setMachineIsChoosing(false);
+  }, [setMachineIsChoosing]);
 
   return (
     <>
@@ -33,7 +27,7 @@ export default function Home() {
       <VStack maxW={820} mx="auto" mt="14" px="8">
         <Scoreboard />
 
-        {isLoading ? (
+        {machineIsChoosing ? (
           <Flex w="full" flexWrap="wrap" pt="50" justifyContent="center">
             <Center w="50%">
               <ChoiceButton as="span" variant={playerChoice} />

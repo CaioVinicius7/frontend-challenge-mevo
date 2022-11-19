@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
@@ -5,7 +6,11 @@ import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
 import { Scoreboard } from "../components/Scoreboard";
 import { ChoiceButton } from "../components/ChoiceButton";
 
-export default function result() {
+import { GameContext } from "../contexts/GameContext";
+
+export default function Result() {
+  const { playerChoice, machineChoice } = useContext(GameContext);
+
   return (
     <>
       <Head>
@@ -16,11 +21,11 @@ export default function result() {
 
         <Flex w="full" flexWrap="wrap" pt="50" justifyContent="center">
           <Center w="50%">
-            <ChoiceButton as="span" variant="Paper" />
+            <ChoiceButton as="span" variant={playerChoice} />
           </Center>
 
           <Center w="50%">
-            <ChoiceButton as="span" variant="Rock" />
+            <ChoiceButton as="span" variant={machineChoice} />
           </Center>
 
           <Heading

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import Router from "next/router";
 
 type ChoiceOptions = "Rock" | "Paper" | "Scissors" | "None";

@@ -1,18 +1,18 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import { Center, Flex, Text, VStack } from "@chakra-ui/react";
 
-import { GameContext } from "../contexts/GameContext";
-
 import { Scoreboard } from "../components/Scoreboard";
 import { ChoiceButton } from "../components/ChoiceButton";
+
+import { useGame } from "../hooks/useGame";
 
 type PlayerChoiceOptions = "Rock" | "Paper" | "Scissors";
 
 export default function Home() {
   const [machineIsChoosing, setMachineIsChoosing] = useState(false);
 
-  const { playerChoice, startGame } = useContext(GameContext);
+  const { playerChoice, startGame } = useGame();
 
   function handleStartGame(choice: PlayerChoiceOptions) {
     setMachineIsChoosing(true);

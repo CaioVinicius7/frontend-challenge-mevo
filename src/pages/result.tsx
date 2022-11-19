@@ -1,4 +1,3 @@
-import { useContext, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
@@ -6,10 +5,10 @@ import { Button, Center, Flex, Heading, VStack } from "@chakra-ui/react";
 import { Scoreboard } from "../components/Scoreboard";
 import { ChoiceButton } from "../components/ChoiceButton";
 
-import { GameContext } from "../contexts/GameContext";
+import { useGame } from "../hooks/useGame";
 
 export default function Result() {
-  const { playerChoice, machineChoice, gameResult } = useContext(GameContext);
+  const { playerChoice, machineChoice, gameResult } = useGame();
 
   return (
     <>

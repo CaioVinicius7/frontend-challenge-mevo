@@ -64,11 +64,7 @@ export default function Result() {
             textAlign="center"
             fontSize={["2xl", "3xl", "4xl"]}
           >
-            {gameResult === "tied"
-              ? "You Tied"
-              : gameResult === "win"
-              ? "You Win"
-              : "You Lose"}
+            {`You ${gameResult}`}
           </Heading>
 
           <Button

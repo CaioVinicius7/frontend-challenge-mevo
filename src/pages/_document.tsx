@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <link rel="shortcut icon" href="favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="favicon.svg" type="image/png" />
 
         <meta name="description" content="Jokenpo Challenge - Mevo" />
       </Head>

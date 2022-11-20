@@ -6,7 +6,9 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button
+  Button,
+  useToast,
+  Box
 } from "@chakra-ui/react";
 
 import { useGame } from "../hooks/useGame";
@@ -19,9 +21,17 @@ interface ResetScoreModalProps {
 export function ResetScoreModal({ isOpen, onClose }: ResetScoreModalProps) {
   const { resetScore } = useGame();
 
+  const toast = useToast();
+
   function handleResetScore() {
     resetScore();
     onClose();
+
+    toast({
+      title: `Your score was successfully reset`,
+      status: "success",
+      isClosable: true
+    });
   }
 
   return (

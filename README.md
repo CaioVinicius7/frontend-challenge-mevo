@@ -36,11 +36,13 @@ Esse projeto se trata de uma aplicação web do famoso jogo Jokenpo ou Pedra Pap
 
 ## 📝 Páginas
 
-![Home](https://i.imgur.com/XD7hFA2.png)
+![Home](https://i.imgur.com/4Bf465t.png)
 
-![Machine is choosing](https://i.imgur.com/j9yvrSb.png)
+![Reset score modal](https://i.imgur.com/cflNO4Y.png)
 
-![Result](https://i.imgur.com/aDcO402.png)
+![Machine is choosing](https://i.imgur.com/hKRKzzR.png)
+
+![Result](https://i.imgur.com/7j2hPsQ.png)
 
 <br>
 

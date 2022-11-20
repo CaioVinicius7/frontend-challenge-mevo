@@ -38,7 +38,7 @@ export function ResetScoreModal({ isOpen, onClose }: ResetScoreModalProps) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
 
-      <ModalContent>
+      <ModalContent mx="6">
         <ModalHeader>Reset Score</ModalHeader>
 
         <ModalCloseButton />

@@ -1,61 +1,84 @@
-# Frontend Challenge
+<h1 align="center"> 
+	Frontend Challenge - Mevo
+</h1>
 
-Neste challenge você vai criar uma aplicação web do famoso jogo Jokenpo ou Pedra Papel Tesoura.
+## 💭 O que é e qual a ideia do projeto?
 
-As regras do jogo são:
-- Se os dois jogares selecionarem a mesma jogada, é um empate
-- Pedra ganha de tesoura
-- Tesoura ganha de papel
-- Papel ganha de pedra
+Esse projeto se trata de uma aplicação web do famoso jogo Jokenpo ou Pedra Papel Tesoura teste técnico de frontend para vaga de desenvolvedor fullstack na [Mevo](https://mevosaude.com.br/).
 
-[Link do figma](https://www.figma.com/file/cZbM9GaHGZK7XeXWpv3iyE/Frontend-Challenge?node-id=4%3A2)
+<br>
 
-## O que deve estar implementado
+## 🛠 Quais tecnologias e bibliotecas foram utilizadas?
 
-- Placar do jogador
-- Possibilidade de selecionar sua própria jogada
-- Utilizar uma jogada aleatória por parte do desafiante
+- [React](https://pt-br.reactjs.org/)
 
-## :heavy_exclamation_mark: Como deve estar implementado
-Requisitos obrigatórios de implementação:
+- [Next.js](https://nextjs.org/)
 
-- React
-- Typescript
+- [Chakra Ui](https://chakra-ui.com/)
 
-## Como pode estar implementado
-Recursos que podem ser utilizados para realizar a implementação:
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
-- Frameworks baseado em React como Next
-- Bibliotecas de componentes (Material, Bootstrap, Chakra, etc)
-- Redux, Mobx, etc
-- Bibliotecas de terceiros (axios, moment, date-fns, lodash, etc)
+<br>
 
-## :heavy_exclamation_mark: O que será avaliado
-- Priorização de implementação
-- Componentização
-- Manutenibilidade
-- Testabilidade
-- Forma de entrega conforme o proposto
+## 📚 mais informações
 
-## :cherries: Ganha mais pontos 
-- Terminar dentro do tempo
-- Responsividade (mobile-fist)
-- Implementar testes unitários
-- Implementar alguma forma de deploy
-- Persistência (pode ser em localStorage, ou firebase e afins)
-- Chamadas HTTP para server
+- Número de páginas: 2
 
-## Como entregar
-A entrega será através de um fork, então você deve:
+- Responsivo: ✅
 
-1. Realizar um fork do repositório (não clone diretamente)
-2. Implementar o teste no seu fork
-3. Enviar um pull-request para este repositório
+- Hospedado: ✅
 
-## :bangbang: Atenção
-Bastante atenção no processo de entrega, este é um critério de avaliação.
+[Template no Figma](https://www.figma.com/file/cZbM9GaHGZK7XeXWpv3iyE/Frontend-Challenge?node-id=4%3A2)
 
-## Inspiração
-Este desafio foi fortemente inspirado no desafio do Frontendmentor, disponível nesse [link](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
+[Clique aqui para acessar o projeto](https://frontend-challenge-mevo.vercel.app/)
 
-### Divirta-se! :rocket:
+<br>
+
+## 📝 Páginas
+
+![Home](https://i.imgur.com/XD7hFA2.png)
+
+![Machine is choosing](https://i.imgur.com/j9yvrSb.png)
+
+![Result](https://i.imgur.com/aDcO402.png)
+
+<br>
+
+## 🎲 Rodando o projeto
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/CaioVinicius7/frontend-challenge-mevo.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd frontend-challenge-mevo
+
+# Acesse o projeto pelo vs code
+$ code .
+
+# baixe as dependências
+$ yarn
+
+# Rode o projeto
+$ yarn dev
+
+# O projeto ficará ativo na porta:3000 - acesse <http://localhost:3000>
+```
+
+<br>
+
+## 💻 Autor
+
+---
+
+<a href="https://www.facebook.com/caio.pereira.94695">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62827681?s=400&u=f0b18831e6690a901f956d637933b9ee2dca3104&v=4" width="100px;" alt=""/>
+ <br>
+ <h2><b>Caio Vinícius</b></h2></a>
+
+<h4> Feito com muito carinho e dedicação :) </h4>
+
+<br>
+
+[![Linkedin Badge](https://img.shields.io/badge/-caio%20vinícius-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/caio-vin%C3%ADcius-87a761200/)
+[![Gmail Badge](https://img.shields.io/badge/-caio1525pereira@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caio1525pereira@gmail.com)](mailto:caio1525pereira@gmail.com)

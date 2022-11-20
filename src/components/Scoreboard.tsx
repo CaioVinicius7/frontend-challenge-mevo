@@ -40,13 +40,16 @@ export function Scoreboard() {
           aria-label="Restart Game"
           icon={<ArrowCounterClockwise />}
           position="absolute"
-          right="4"
+          right={["2", "3", "4"]}
+          top={["2", "3", "4"]}
+          padding="2"
+          alignItems="flex-start"
           bg="transparent"
           fontSize="lg"
-          _hover={{
-            bg: "gray.300"
-          }}
           onClick={onOpen}
+          _hover={{
+            color: "gray.900"
+          }}
         />
       </VStack>
 

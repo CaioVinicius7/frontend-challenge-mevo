@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import Router from "next/router";
 
 type ChoiceOptions = "Rock" | "Paper" | "Scissors" | "None";
@@ -58,8 +58,18 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
     if (winCondition) {
       setGameResult("win");
       setScore((state) => state + 1);
+
+      localStorage.setItem("@jokenpo-score", JSON.stringify(score + 1));
     }
   }
+
+  useEffect(() => {
+    const storageScore = localStorage.getItem("@jokenpo-score");
+
+    if (storageScore) {
+      setScore(JSON.parse(storageScore));
+    }
+  }, []);
 
   return (
     <GameContext.Provider

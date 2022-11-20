@@ -6,9 +6,10 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  ModalProps,
   Button
 } from "@chakra-ui/react";
+
+import { useGame } from "../hooks/useGame";
 
 interface ResetScoreModalProps {
   isOpen: boolean;
@@ -16,6 +17,13 @@ interface ResetScoreModalProps {
 }
 
 export function ResetScoreModal({ isOpen, onClose }: ResetScoreModalProps) {
+  const { resetScore } = useGame();
+
+  function handleResetScore() {
+    resetScore();
+    onClose();
+  }
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -35,7 +43,9 @@ export function ResetScoreModal({ isOpen, onClose }: ResetScoreModalProps) {
             Cancel
           </Button>
 
-          <Button colorScheme="blue">Reset</Button>
+          <Button colorScheme="blue" onClick={handleResetScore}>
+            Reset
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

@@ -10,6 +10,7 @@ interface GameContextType {
   score: number;
   gameResult: GameResultOptions;
   startGame: (playerChoice: ChoiceOptions) => void;
+  resetScore: () => void;
 }
 
 interface GameContextProviderProps {
@@ -63,6 +64,11 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
     }
   }
 
+  function resetScore() {
+    setScore(0);
+    localStorage.setItem("@jokenpo-score", JSON.stringify(0));
+  }
+
   useEffect(() => {
     const storageScore = localStorage.getItem("@jokenpo-score");
 
@@ -78,7 +84,8 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
         machineChoice,
         score,
         gameResult,
-        startGame
+        startGame,
+        resetScore
       }}
     >
       {children}
